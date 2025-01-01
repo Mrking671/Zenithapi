@@ -23,11 +23,7 @@ export default async function handler(req, res) {
     const payload = {
       model: "gpt-4o",
       messages: [
-        {
-          role: 'system',
-          content: 'Zenith AI: The Limitless Frontier of Intelligence...',
-        },
-        { role: 'assistant', content: 'instructions applied and understood' },
+        { role: 'system', content: 'You are a helpful assistant.' },
         { role: 'user', content: userMessage },
       ],
     };
@@ -59,7 +55,6 @@ export default async function handler(req, res) {
       res.writeHead(200, corsHeaders);
       return res.end(
         JSON.stringify({
-          Join: "https://t.me/Ashlynn_Repository",
           successful: "success",
           status: 200,
           response: data.response,
@@ -70,7 +65,6 @@ export default async function handler(req, res) {
       res.writeHead(502, corsHeaders);
       return res.end(
         JSON.stringify({
-          Join: "https://t.me/Ashlynn_Repository",
           successful: "failure",
           status: 502,
           response: "Invalid API response format. Please try again later.",
@@ -82,7 +76,6 @@ export default async function handler(req, res) {
     res.writeHead(500, corsHeaders);
     return res.end(
       JSON.stringify({
-        Join: "https://t.me/Ashlynn_Repository",
         successful: "failure",
         status: 500,
         response: "An unexpected error occurred. Please try again later.",
